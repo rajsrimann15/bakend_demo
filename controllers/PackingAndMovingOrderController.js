@@ -39,8 +39,8 @@ async function createAdminAppNotification(name, headings, content, metaData) {
 //@route GET /api/packingAndMovingOrder
 //@access private
 const getPackingAndMovingOrders = asyncHandler(async (req, res) => {
-  const packingAndMovingOrders = await PackingAndMovingOrderModel.find({user_id:req.user.id});
-  res.status(200).json(packingAndMovingOrders);
+  const packingAndMovingOrder = await PackingAndMovingOrderModel.find({user_id:req.user.id});
+  res.status(200).json(packingAndMovingOrder);
 });
 
 //@desc Create New PackingAndMovingOrder
@@ -88,7 +88,7 @@ const createPackingAndMovingOrder = asyncHandler(async (req, res) => {
 
     console.log(packingAndMovingOrder);
 
-    createAdminAppNotification('Manage order', `Order ID : ${recieveAddress.startingDistrict.slice(0, 3)}${countString}${recieveAddress.destinationDistrict.slice(0, 3)}`, 'New packing and moving order', {notificationType: 'newOrder', orderId: `${recieveAddress.startingDistrict.slice(0, 3)}${countString}${recieveAddress.destinationDistrict.slice(0, 3)}`});
+    createAdminAppNotification('Manage order', `Order ID : ${recieveAddress.startingDistrict.slice(0, 3)}${countString}${recieveAddress.destinationDistrict.slice(0, 3)}`, 'New packing and moving order', {notificationType: 'newOrder', orderData: order});
     
     res.status(200).json(packingAndMovingOrder);
     res.end();
@@ -110,48 +110,19 @@ const getPackingAndMovingOrder = asyncHandler(async (req, res) => {
     res.status(200).json(order);
 });
 
+
 //@desc Update PackingAndMovingOrder
 //@route PUT /api/packingAndMovingOrder/:id
 //@access private
 const updatePackingAndMovingOrder = asyncHandler(async (req, res) => {
-  if (!req.body.parameter || !req.body.value) res.status(400).json({message: 'Some fields are missing.'});
-
-  console.log(`reqest id is : ${req.params.id}`);
-  console.log(`request body is : ${req.body}`);
-
-  try {
-    const updatedOrder = await PackingAndMovingOrderModel.findOneAndUpdate(
-      { orderId: req.params.id },
-      { $set: { [req.body.parameter]: req.body.value } },
-      { new: true } // Return the updated document
-    );
-    
-    if (updatedOrder) {
-      res.status(200).json({message:`${req.body.parameter} changed.`});
-    }
-    else {
-      res.status(404).json({message: 'Order not found.'});
-    }
-  } catch (error) {
-    res.status(500).json({message: 'Couldn\'t update changes, please try again.'});
-  }
+  res.status(200).json({message:"Updated"});
 });
 
 //@desc Delete PackingAndMovingOrder
 //@route DELETE /api/packingAndMovingOrder/:id
 //@access private
 const deletePackingAndMovingOrder = asyncHandler(async (req, res) => {
-  console.log(`reqest id is : ${req.params.id}`);
-  
-  try {
-    const deletedCount = await PackingAndMovingOrderModel.deleteOne({orderId: req.params.id});
-    
-    if (deletedCount.deletedCount === 1) res.status(200).json({message:`order : ${req.params.id} removed`});
-    else res.status(404).json({message: 'Order not found.'});
-    
-  } catch (error) {
-    res.status(500).json({message: 'Couldn\'t update changes, please try again.'});
-  }
+  res.status(200).json({message:"deleted"});
 });
 
 module.exports = {

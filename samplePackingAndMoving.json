@@ -1,0 +1,54 @@
+{
+  "name": "Leon Ronaldo",
+  "phone": "+91 97874 16631",
+  "recieveAddress": {
+    "sourceLocation": "chennai",
+    "destination": "Coimbatore south",
+    "startingDistrict": "chennai",
+    "destinationDistrict": "coimbatore",
+    "contact": "+919787416631",
+    "recieverContact": "99856632",
+    "selectedDate": "2024-07-11 00:00:00.000"
+  },
+  "itemsToShip": {
+    "miscellaneous": "none",
+    "Dining Table": {
+      "basicCost": {
+        "$numberInt": "1287"
+      },
+      "imageUrl": "assets/images/items/dining_table.jpg",
+      "itemCount": {
+        "$numberInt": "1"
+      }
+    },
+    "Chairs": {
+      "basicCost": {
+        "$numberInt": "223"
+      },
+      "imageUrl": "assets/images/items/chair.jpg",
+      "itemCount": {
+        "$numberInt": "1"
+      }
+    },
+    "Fridge (Single door)": {
+      "basicCost": {
+        "$numberInt": "10822"
+      },
+      "imageUrl": "assets/images/items/fridge_single_door.jpg",
+      "itemCount": {
+        "$numberInt": "1"
+      }
+    },
+    "Bicycle": {
+      "basicCost": {
+        "$numberInt": "4175"
+      },
+      "imageUrl": "assets/images/items/bicycle.jpg",
+      "itemCount": {
+        "$numberInt": "1"
+      }
+    }
+  },
+  "totalItems": "5",
+  "viewed": false
+  }

@@ -1,45 +1,9 @@
 const asyncHandler = require("express-async-handler");
 const PackingAndMovingOrderModel = require("../models/PackingAndMovingOrderModel");
-const oneSignal = require('@onesignal/node-onesignal');
 
-//push notification service setup
-const clientAppConfig = oneSignal.createConfiguration({
-  appKey: '46aa1153-5f3d-4468-a2bd-98f8f664ef6d',
-  restApiKey: 'MGYwMGRjYzQtZTk1OC00N2NlLTg4NzUtN2MxYmRiYWRhNjNi',
-});
-
-const oneSignalClient = new oneSignal.DefaultApi(clientAppConfig);
-
-async function createClientAppNotification(userId, name, headings, content, metaData) {
-  //the notification
-
-  const notification = new oneSignal.Notification();
-  notification.app_id = '46aa1153-5f3d-4468-a2bd-98f8f664ef6d';
-
-  // Name property may be required in some case, for instance when sending an SMS.
-  notification.name = name;
-  notification.contents = {
-      en: content
-  }
-
-  // required for Huawei
-  notification.headings = {
-      en: headings
-  }
-
-  notification.data = metaData;
-  
-  notification.filters = [
-    {
-      field: 'tag',
-      key: 'userId',
-      relation: '=',
-      value: userId
-    },
-  ];
-
-  await oneSignalClient.createNotification(notification);
-}
+//@desc Get PackingAndMovingOrder
+//@route GET /api/packingAndMovingOrder/
+//@access private
 
 const adminGetPackingAndMovingOrders = asyncHandler(async (req, res) => {
     const packingAndMovingOrder = await PackingAndMovingOrderModel.find();
@@ -76,7 +40,6 @@ const adminUpdatePackingAndMovingOrder = asyncHandler(async (req, res) => {
     );
     
     if (updatedOrder) {
-      createClientAppNotification(updatedOrder.user_id, `Order ${req.body.value}`, `Order ${req.params.id} ${req.body.value}`, `Your order has been ${req.body.value}` , {notificationType: 'orderChanged'});
       res.status(200).json({message:`${req.body.parameter} changed.`});
     }
     else {

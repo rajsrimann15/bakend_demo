@@ -3,51 +3,80 @@ const passport = require('passport');
 const router = express.Router();
 const session = require('express-session');
 require('../controllers/authController');
+const ensureAuthenticated = require('../middleware/authMiddleware');
+const {
+  registerUser,
+  loginUser,
+  currentUser,
+  loginGoogle,
+  updateUser
+} = require('../controllers/userController');
 const bodyParser = require('body-parser');
+const jwt = require("jsonwebtoken");
 
-
-function isLoggedIn(req,res,next){
-    req.user ? next():res.sendStatus(401);
-}
-
-function ensureAuthenticated(req, res, next) {
-    if (req.isAuthenticated()) {
-      return next();
-    }
-    res.redirect('/auth/google');
-  }
 
 //middlewares
 router.use(bodyParser.json());
-router.use(session({ secret: 'cats'}));
+router.use(session({
+  secret: 'cats',
+  resave: false,
+  saveUninitialized: false,
+}));
 router.use(passport.initialize());
 router.use(passport.session());
 
-router.get('/users/login',(req,res)=>{
-    res.send('<a href="/auth/google"> login with google </a>');
-});
+//current user
 
-// Google OAuth login route
-router.get('/auth/google', passport.authenticate('google', {
-    scope: ['profile', 'email']
-}));
+router.get('/auth/current', ensureAuthenticated, currentUser);
 
-// Google OAuth callback route
-router.get('/auth/google/callback', 
-    passport.authenticate('google', { 
-        successRedirect:'/protected',
-        failureRedirect: '/failure'}),
-    
+//update user
+
+router.put('/auth/update/user/:id', ensureAuthenticated, updateUser);
+
+//registration (custom)
+
+router.post('/auth/register', registerUser);
+
+//login (custom)
+
+router.post('/auth/login', loginUser);
+
+//google login
+
+router.post('/auth/login/google', loginGoogle);
+
+//google login website
+
+router.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
+  
+router.get('/auth/google/callback',
+  passport.authenticate('google', {failureRedirect: '/'}),
+  (req, res) => {
+    const user = req.user;
+    const accessToken = jwt.sign({ userId: user.id, email: user.email }, 'raj@123', { expiresIn: '1h' });
+    const refreshToken = jwt.sign({ userId: user.id, email: user.email }, 'raj@456', { expiresIn: '7d' });
+
+    res.status(200).json({ accessToken: accessToken, refreshToken: refreshToken, userName: user.username, userObj: user });
+  }
 );
 
-//successRedirect
-router.get('/protected',isLoggedIn,(req,res)=>{
-    res.send("Welcome to shiftStream");
+router.post('/token', async (req, res) => {
+  const { token, refreshToken } = req.body;
+
+  try {
+      const decoded = jwt.verify(token, 'raj@123');
+      res.json({ token });
+  } catch (err) {
+      try {
+          const decodedRefresh = jwt.verify(refreshToken, 'raj@456');
+          const newToken = jwt.sign({ userId: decodedRefresh.userId }, 'raj@123', { expiresIn: '1h' });
+          res.json({ token: newToken });
+      } catch (err) {
+          res.status(401).send('Unauthorized');
+      }
+  }
 });
 
-//failureRedirect
-router.get('/auth/failure',(req,res)=>{
-    res.send("something went wrong");
-});
+ 
 
 module.exports = router;

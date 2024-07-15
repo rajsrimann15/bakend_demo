@@ -34,6 +34,10 @@ const packingAndMovingOrderSchema = mongoose.Schema(
     status: {
       type: String,
       required: [true, "Viewed must be set atleast to false"] // orderPlaced -> accepted/rejected -> orderPicked->orderDelivered
+    },
+    statusUpdateLog: {
+      type: Map,
+      required: [true, "Update log must be initialized"] // {'orderPlaced': {'updatedAt': timestamp, 'viewedByUser': false}}
     }
   },
   {

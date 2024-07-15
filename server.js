@@ -9,7 +9,7 @@ const app = express();
 const port = 5001;
 
 app.use(express.json());
-app.use("/orders/packingAndMoving", require("./routes/PackingAndMovingRoutes"));
+app.use("/orders/packingAndMoving", require("./routes/PackingAndMovingroutes"));
 app.use("/orders/longDistanceMoving", require("./routes/LongDistanceMovingRoutes"));
 app.use("/orders/localDistanceMoving", require("./routes/LocalDistanceMovingRoutes"));
 app.use("/admin", require("./routes/adminRoutes"));

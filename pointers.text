@@ -1,0 +1,20 @@
+index pg blur overlay= 9838
+index header=6463
+
+
+<h1 class="mt-4 mb-4" style="color: #ffffff;">Hello Students,</h1>
+                <h1 class="display-1 mb-5"><span style=" color:#ffffff"> Welcome to Study Spark</span>
+                    <span style="color: #9b71d8;"> Educational Consultancy</span>
+                </h1>
+
+
+                .jumbotron {
+  background: linear-gradient(rgba(10, 7, 10, 0.5), rgba(42, 206, 209, 0.3)), url(../img/index.jpg), no-repeat center center;
+  background-size: cover;
+}
+
+
+
+.bg-dark {
+  background-color: #63438a !important;
+}

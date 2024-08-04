@@ -1,46 +1,60 @@
-const express = require("express");
-const connectDb = require("./config/dbConnection");
-const errorHandler = require("./middleware/errorHandler");
-require('./controllers/authController');
+const express = require('express')
+const app = express()
+const nodemailer = require('nodemailer')
+require('dotenv').config()
+const PORT = process.env.PORT
 
-connectDb();
-const app = express();
+app.set('view engine', 'ejs')
+app.use('/', express.static(__dirname + '/public'))
 
-const port = 5001;
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
 
-app.use(express.json());
-app.use("/orders/packingAndMoving", require("./routes/PackingAndMovingroutes"));
-app.use("/orders/longDistanceMoving", require("./routes/LongDistanceMovingRoutes"));
-app.use("/orders/localDistanceMoving", require("./routes/LocalDistanceMovingRoutes"));
-app.use("/admin", require("./routes/adminRoutes"));
-app.use(errorHandler);
-app.use('/', require("./routes/authRoutes"));
+app.get('/', (req, res) => { res.render('index') });
+app.get('/index.html', (req, res) => { res.render('index') });
+app.get('/contact.html', (req, res) => { res.render('contact') });
+app.get('/about.html', (req, res) => { res.render('about') });
 
+app.post('/send-email', (req, res) => {
+    const { name, email, phone, course } = req.body;
 
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-  
-  function sendRequestEvery8Minutes(url) {
-    // Helper function to send the request
-    async function sendRequest() {
-      try {
-        const response = await fetch(url);
-        const data = await response.json(); // Or use .text() or other methods as needed
-        console.log('Request successful:', data);
-      } catch (error) {
-        console.error('Request failed:', error);
-      }
-    }
-  
-    // Initial request
-    sendRequest();
-  
-    // Create an interval to send requests every 8 minutes
-    setInterval(sendRequest, 5 * 60 * 1000); // Convert 8 minutes to milliseconds
-  }
-  
-  // Example usage:
-  const myUrl = 'https://shiftstream.onrender.com/admin/orders';
-  sendRequestEvery8Minutes(myUrl);
-  
+    //Create transporter
+    let transporter = nodemailer.createTransport({
+        host: `smtp.gmail.com`,
+        auth: {
+            user: "dadcode10@gmail.com",
+            pass: "uvbjtyjisepfzsgt"
+        },
+    secure: true, // Use SSL
+    port: 465
+    });
+
+    let html_Content = `
+    <h3>Name: ${name}</h3>
+    <h3>Email: ${email}</h3>
+    <h3>Phone: ${phone}</h3>
+    <h3>Course: ${course}</h3>`
+
+    // Email data
+    let mailOptions = {
+        from: `"${name}" <${email}>`,
+        to: "director@study-spark.com",
+        subject: 'New Request Form Submission',
+        html: html_Content
+    };
+
+    // Send email
+    transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            console.log(error);
+            res.json({ success: false, message: 'Sorry, something went wrong. Please try again later.'});
+        } else {
+            console.log('Email sent: ' + info.response);
+            res.redirect('/?success=true#contact');
+        }
+    });
+
+   
 });
+
+app.listen(PORT, (res, req) => { console.log(`Server is running on PORT: http://localhost:${PORT}`) })

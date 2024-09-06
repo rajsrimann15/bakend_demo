@@ -42,10 +42,10 @@
 
     // Courses carousel
     $(".courses-carousel").owlCarousel({
-        autoplay: false,
-        smartSpeed: 0,
-        loop: false,
-        dots: false,
+        autoplay: true,
+        smartSpeed: 1600,
+        loop: true,
+        dots: true,
         nav : false,
         responsive: {
             0:{

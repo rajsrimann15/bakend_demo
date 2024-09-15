@@ -11125,7 +11125,7 @@ h6,
 }
 
 .jumbotron.canada {
-  background-image: url('../img/canada.png');
+  /* background-image: url('../img/canada.png'); */
     background-size: cover; /* Ensures the image covers the entire background */
     background-position: center; /* Centers the image */
     background-repeat: no-repeat; /* Prevents the image from repeating */

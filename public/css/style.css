@@ -5067,11 +5067,13 @@ input[type="button"].btn-block {
 
 .card-title {
   margin-bottom: 0.75rem;
+  color: purple !important;
 }
 
 .card-subtitle {
   margin-top: -0.375rem;
   margin-bottom: 0;
+  color: purple !important;
 }
 
 .card-text:last-child {
@@ -11095,7 +11097,7 @@ h6,
 }
 
 .jumbotron.about-us {
-  background: linear-gradient(rgba(108, 25, 146, 0.5), rgba(99, 67, 138, 0.3)), url(../img/.png), no-repeat center center;
+  background: linear-gradient(rgba(108, 25, 146, 0.5), rgba(99, 67, 138, 0.3)), url(../img/aboutusTop.jpg), no-repeat center center;
   background-size: cover;
 }
 
@@ -12175,7 +12177,7 @@ animation: fromBot 2s;
 }
 
 .top-footer {
-  width: 100%;
+  width: 100vw;
   height: fit-content;
   background-color: white;
   text-align: center;
@@ -12247,4 +12249,24 @@ animation: fromBot 2s;
 
 .purplefont{
   color: #120f2d;
+}
+.program{
+  font-size: 20px;
+  font-weight: bold;
+}
+.why{
+  font-size: 20px;
+  font-weight: bold;
+}
+.line{
+  font-size: 20px;
+  font-weight: bold;
+}
+.popular{
+  font-size: 20px;
+  font-weight: bold;
+}
+.special{
+  font-size: 20px;
+  font-weight: bold;
 }

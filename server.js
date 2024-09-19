@@ -9,7 +9,6 @@ const path = require('path');
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, 'views'));
-
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -27,16 +26,19 @@ app.get('/australia.html', (req, res) => { res.render('australia'); })
 app.get('/singapore.html', (req, res) => { res.render('singapore'); })
 app.get('/ireland.html', (req, res) => { res.render('ireland'); })
 app.get('/newzealand.html', (req, res) => { res.render('newzealand');})
-
 app.get('/france.html', (req, res) => { res.render('france'); })
 app.get('/italy.html', (req, res) => { res.render('italy'); })
 app.get('/germany.html', (req, res) => { res.render('germany'); })
+//
+app.get('/onlinecourse.html', (req, res) => { res.render('onlinecourse'); })
 app.get('/ba.html', (req, res) => { res.render('ba'); })
 app.get('/bba.html', (req, res) => { res.render('bba'); })
 app.get('/bca.html', (req, res) => { res.render('bca'); })
 app.get('/mba.html', (req, res) => { res.render('mba'); })
 app.get('/mca.html', (req, res) => { res.render('mca'); })
 app.get('/ma.html', (req, res) => { res.render('ma'); })
+//
+app.get('/studyabroad.html', (req, res) => { res.render('studyabroad'); })
 app.get('/management.html', (req, res) => { res.render('management'); })
 app.get('/medical.html', (req, res) => { res.render('medical'); })
 app.get('/engineering.html', (req, res) => { res.render('engineering'); })
@@ -45,6 +47,15 @@ app.get('/science.html', (req, res) => { res.render('science'); })
 app.get('/law.html', (req, res) => { res.render('law'); })
 app.get('/commerce.html', (req, res) => { res.render('commerce'); })
 app.get('/arts.html', (req, res) => { res.render('arts'); })
+//
+app.get('/mbbsabroad.html', (req, res) => { res.render('mbbsabroad'); })
+app.get('/russia.html', (req, res) => { res.render('russia'); })
+app.get('/georgia.html', (req, res) => { res.render('georgia'); })
+app.get('/philippines.html', (req, res) => { res.render('philippines'); })
+app.get('/china.html', (req, res) => { res.render('china'); })
+app.get('/serbia.html', (req, res) => { res.render('serbia'); })
+
+
 app.post('/send-email', (req, res) => {
     const { name, email, phone, course } = req.body;
 

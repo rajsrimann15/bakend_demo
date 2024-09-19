@@ -6,8 +6,8 @@
     <title>Study Spark</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Your Spark for Academic Achievement" name="keywords">
-    <meta content="Your Spark for Academic Achievement" name="description">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
@@ -22,9 +22,11 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Libraries Stylesheet -->
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
@@ -72,44 +74,7 @@
     <div class="black-shade" id="black-shade" style="display: none;"></div>
 
     <!-- Topbar Start -->
-    <div class="container-fluid bg-dark top-bar">
-        <div class="row py-2 px-lg-5">
-            <div class="col-lg-12 d-flex justify-content-between align-items-center">
-                <div class="d-flex align-items-center text-white m-2">
-                    <img src="img/WhatsApp.svg" style="height: 40px; margin-right:2px;">
-                    <p style="margin: 0;">+91 63827 09460 <br> +91 91108 01809</p>
-                    <!-- <small style="padding-left: 10px; margin-bottom: 10px;">|</small>-->
-                </div>
-                <div class="d-flex align-items-center text-white">
-                    <p style="margin: 0; font-size:30px"><i class="fa fa-envelope mr-2"></i>director@study-spark.com
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- Topbar End -->
-
-
-    <!-- Navbar Start -->
-    <div class="container-fluid p-0 d-lg-block text-center" id="header">
-        <div class="logo-title d-lg-block">
-            <a href="index.html" class="navbar-brand">
-                <div class="header-container flex-nowrap">
-                    <img src="img/logo2.svg" alt="Logo" class="logo">
-                    <div class="text-container">
-                        <h1 class="m-0 text-uppercase text-primary" style="line-height: 1.0;">
-                            <span class="study-spark">STUDY SPARK</span><br>
-                            <span class="educational-consultancy">EDUCATIONAL CONSULTANCY</span><br>
-                            <span class="header-title"
-            style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-weight: bold;text-transform: uppercase;font-size: 20px;color: black;">
-            " Your Spark For Academic Achievement "</span>
-                        </h1>
-                    </div>
-                </div>
-            </a>
-        </div>
+    <%- include('partials/header')%>
         
         <nav class="navbar justify-content-center navbar-expand-lg bg-white navbar-light py-3 px-lg-5">
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -124,7 +89,7 @@
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Online Course</a>
                         <div class="dropdown-menu m-0">
                             <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">UG Courses</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">UG</a>
                                 <div class="dropdown-menu m-0">
                                     <a href="ba.html" class="dropdown-item nav-link">BA</a>
                                     <a href="bba.html" class="dropdown-item nav-link">BBA</a>
@@ -134,9 +99,9 @@
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">PG Courses</a>
                                 <div class="dropdown-menu m-0">
-                                    <a href="pg-course1.html" class="dropdown-item nav-link">MBA</a>
-                                    <a href="pg-course2.html" class="dropdown-item nav-link">MCA</a>
-                                    <a href="pg-course2.html" class="dropdown-item nav-link">MA<br>(English/ Political
+                                    <a href="mba.html" class="dropdown-item nav-link">MBA</a>
+                                    <a href="mca.html" class="dropdown-item nav-link">MCA</a>
+                                    <a href="ma.html" class="dropdown-item nav-link">MA<br>(English/ Political
                                         Science/ Sociology)</a>
                                 </div>
                             </div>
@@ -146,37 +111,41 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Study Abroad</a>
                         <div class="dropdown-menu m-0">
-                            <a href="index.html" class="nav-item nav-link">Management </a>
-                            <a href="index.html" class="nav-item nav-link">Medical</a>
-                            <a href="index.html" class="nav-item nav-link">Engineering</a>
-                            <a href="index.html" class="nav-item nav-link">Architecture</a>
-                            <a href="index.html" class="nav-item nav-link">Science</a>
-                            <a href="index.html" class="nav-item nav-link">Law</a>
-                            <a href="index.html" class="nav-item nav-link">Commerce</a>
-                            <a href="index.html" class="nav-item nav-link">Arts</a>
+                            <a href="management.html" class="nav-item nav-link">Management </a>
+                            <a href="medical.html" class="nav-item nav-link">Medical</a>
+                            <a href="engineering.html" class="nav-item nav-link">Engineering</a>
+                            <a href="architecture.html" class="nav-item nav-link active">Architecture</a>
+                            <a href="science.html" class="nav-item nav-link">Science</a>
+                            <a href="law.html" class="nav-item nav-link">Law</a>
+                            <a href="commerce.html" class="nav-item nav-link">Commerce</a>
+                            <a href="arts.html" class="nav-item nav-link">Arts</a>
                         </div>
                     </div>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle active" data-toggle="dropdown">Countries</a>
-                        <div class="dropdown-menu m-0">
-                            <a href="index.html" class="nav-item nav-link">USA</a>
-                            <a href="canada.html" class="nav-item nav-link active">Canada</a>
-                            <a href="index.html" class="nav-item nav-link">UK</a>
-                            <a href="index.html" class="nav-item nav-link">Europe</a>
-                            <a href="index.html" class="nav-item nav-link">Australia</a>
-                            <a href="index.html" class="nav-item nav-link">New Zealand</a>
-                            <a href="index.html" class="nav-item nav-link">Dubai</a>
-                            
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Countries</a>
+                        <div class="dropdown-menu m-0" >
+                            <a href="usa.html" class="nav-item nav-link">USA</a>
+                            <a href="canada.html" class="nav-item nav-link">Canada</a>
+                            <a href="uk.html" class="nav-item nav-link">UK</a>
+                            <a href="ireland.html" class="nav-item nav-link">Ireland</a>
+                            <a href="singapore.html" class="nav-item nav-link">Singapore</a>
+                            <a href="australia.html" class="nav-item nav-link">Australia</a>
+                            <a href="newzealand.html" class="nav-item nav-link">New Zealand</a>
+                            <a href="dubai.html" class="nav-item nav-link">Dubai</a>
+                            <a href="france.html" class="nav-item nav-link">France</a>
+                            <a href="italy.html" class="nav-item nav-link">Italy</a>
+                            <a href="germany.html" class="nav-item nav-link">Germany</a>
+                             
                         </div>
                     </div>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">MBBS Abroad</a>
                         <div class="dropdown-menu m-0">
-                            <a href="index.html" class="nav-item nav-link">Russia</a>
-                            <a href="index.html" class="nav-item nav-link">Georgia</a>
-                            <a href="index.html" class="nav-item nav-link">Philippines</a>
-                            <a href="index.html" class="nav-item nav-link">China</a>
-                            <a href="index.html" class="nav-item nav-link">Serbia</a>
+                            <a href="russia.html" class="nav-item nav-link">Russia</a>
+                            <a href="georgia.html" class="nav-item nav-link">Georgia</a>
+                            <a href="philippines.html" class="nav-item nav-link">Philippines</a>
+                            <a href="china.html" class="nav-item nav-link">China</a>
+                            <a href="serbia.html" class="nav-item nav-link">Serbia</a>
                         </div>
                     </div>
                     <a href="contact.html" class="nav-item nav-link">Contact</a>
@@ -248,263 +217,177 @@
 
         <!-- Feature Start -->
         <div class="container-fluid py-5">
-        <div class="container py-5">
-        
-            <div class="row" style="background-color: #7b289f; border-radius: 10px; height: min-content; ">
-                 <div class="container">
-                    <div class="row">
-                        <div class="col-2">
-                            <div class="list-group" style="margin-top: 0.5rem; margin-bottom: 0.5rem;">
-                                <button class="tablinks active list-group-item list-group-item-action  box1" onclick="openCity(event, 'business')" id="defaultOpen">
-                                    <p class="fonttext">Enginnering</p></button>
-                                <div class='showHere'></div>
-                                <button class="tablinks list-group-item list-group-item-action box2" onclick="openCity(event, 'city')">
-                                    <p class="fonttext">Arts and Humanities</p></button>
-                                <div class='showHere'></div>
-                                <button class="tablinks list-group-item list-group-item-action box3" onclick="openCity(event, 'cs')">
-                                    <p class="fonttext">CSI</p></button>
-                                <div class='showHere'></div>
-                                <button class="tablinks list-group-item list-group-item-action box4" onclick="openCity(event, 'education')">
-                                    <p class="fonttext">Education</p> </button>
-                                <div class='showHere'></div>
-                                <button class="tablinks list-group-item list-group-item-action box1" onclick="openCity(event, 'health')">
-                                    <p class="fonttext">Healthcare and Nursing</p></button>
-                                <div class='showHere'></div>
-                                <button class="tablinks list-group-item list-group-item-action box2" onclick="openCity(event, 'PC')">
-                                    <p class="fonttext">Psychology and Counseling</p></button>
-                                <div class='showHere'></div>
-                                <button class="tablinks list-group-item list-group-item-action box3" onclick="openCity(event, 'ss')">
-                                    <p class="fonttext">Social Sciences</p></button>
-                                <div class='showHere'></div>
-                                <button class="tablinks list-group-item list-group-item-action box4" onclick="openCity(event, 'law')">
-                                    <p class="fonttext">Law and Criminal Justice</p></button>
-                                <div class='showHere'></div>
-                                <button class="tablinks list-group-item list-group-item-action box1" onclick="openCity(event, 'education-science')">
-                                    <p class="fonttext">ESS</p></button>
-                                <div class='showHere'></div>
-                                <button class="tablinks list-group-item list-group-item-action box2" onclick="openCity(event, 'benefits')">
-                                    <p class="fonttext">Benefits of Online Degrees</p></button>
-                                <div class='showHere'></div>
-                                <button class="tablinks list-group-item list-group-item-action box2" onclick="openCity(event, 'Considerations')">
-                                    <p class="fonttext">Considerations</p></button>
-                                <div class='showHere'></div>
-                            </div>
-                        </div>
-                
-                        <div class="col-10 mainHolder">
-                
-                      
-                            <div id="business" class="tabcontent slideUp">
-                                <div class="OnAnimateStart d-flex">
-                                    <div class="d-flex flex-column firstRow">
-                                        <h1 style="color: #ffffff; padding-left: 10px; padding-top: 10px; padding-left: 10px;">Engineering</h1>
-                                        <p style="color: #ffffff; padding-top: 10px  ">Programs: Electrical Engineering, Mechanical Engineering, Civil Engineering, Software Engineering
-                                            <br>
-                                            <br>
-                                            Why: Engineering degrees online often focus on specific specializations, allowing professionals to advance their skills without leaving their current jobs. Programs often include virtual labs and simulations.</p>
-                                        
-                                    </div>
-                                
-                                    
-                                </div>
-                            </div>
-                         
-                               <div id="city" class="tabcontent slideUp">
-                                    <div class="OnAnimateStart d-flex">
-                                        <div class="d-flex flex-column firstRow">
-                                            <h1 style="color: #ffffff; padding-left: 10px; padding-top: 10px; padding-left: 10px;">Business and Management </h1>
-                                            <p style="color: #ffffff; padding-top: 10px  ">Programs: Business Administration (BBA, MBA), Finance, Marketing, Human Resources, Project Management
-                                                <br>
-                                                <br>
-                                                Why: Online business programs are versatile, providing foundational knowledge applicable across industries. Many programs offer specializations, making them suitable for both entry-level professionals and those seeking advancement.
-                                            </p>
-                                            
-                                        </div>
-                                    
-                                        
-                                    </div>
-                                </div>
-                         
-                         
-                                <div id="cs" class="tabcontent slideUp">
-                                    <div class="OnAnimateStart d-flex">
-                                        <div class="d-flex flex-column firstRow">
-                                            <h1 style="color: #ffffff; padding-top: 10px"> Computer Science and Information Technology  </h1>
-                                            <p style="color: #ffffff; padding-top: 10px ">Programs: Computer Science, Data Science, Cybersecurity, Software Development, Information Systems
-                                                <br>
-                                                <br>
-                                                Why: With the rise of the tech industry, online degrees in these fields are highly sought after. These programs often offer hands-on experience through virtual labs and real-world projects.
-                                            </p>
-                                            
-                                       
-                                                <!--content-->
-                                            </div>
-                                        </div>
-                                       
-                                        
-                                    </div>
-                                    <div id="education" class="tabcontent slideUp">
-                                        <div class="OnAnimateStart d-flex">
-                                            <div class="d-flex flex-column firstRow">
-                                                <h1 style="color: #ffffff; padding-top: 10px"> Education </h1>
-                                                <p style="color: #ffffff; padding-top: 10px ">Programs: Early Childhood Education, Special Education, Educational Leadership, Instructional Design
-                                                    <br>
-                                                    <br>
-                                                    Why: Online education degrees are ideal for teachers seeking to advance their careers or transition into administrative roles. Programs often focus on practical strategies for classroom management and educational technology.
-                                                </p>
-                                                
-                                           
-                                                    <!--content-->
-                                                </div>
-                                            </div>
-                                </div>
-                                             
-                                <div id="health" class="tabcontent slideUp">
-                                    <div class="OnAnimateStart d-flex">
-                                        <div class="d-flex flex-column firstRow">
-                                            <h1 style="color: #ffffff; padding-top: 10px"> Health and Nursing </h1>
-                                            <p style="color: #ffffff; padding-top: 10px ">Programs: Early Childhood Education, Special Education, Educational Leadership, Instructional Design
-                                                <br>
-                                                <br>
-                                                Why: Online education degrees are ideal for teachers seeking to advance their careers or transition into administrative roles. Programs often focus on practical strategies for classroom management and educational technology.
-                                            </p>
-                                            
-                                       
-                                                <!--content-->
-                                            </div>
-                                        </div>
-                            </div>
-                            <div id="PC" class="tabcontent slideUp">
-                                <div class="OnAnimateStart d-flex">
-                                    <div class="d-flex flex-column firstRow">
-                                        <h1 style="color: #ffffff; padding-top: 10px">Psychology and Counseling  </h1>
-                                        <p style="color: #ffffff; padding-top: 10px ">Programs: Psychology, Clinical Mental Health Counseling, Organizational Psychology, Educational Psychology
-                                            <br>
-                                            <br>
-                                            Why: These programs provide a foundation in psychological theory and practice, with many offering paths to licensure for those seeking to become counselors or therapists.
-                                        </p>
-                                        
-                                   
-                                            <!--content-->
-                                        </div>
-                                    </div>
-                        </div>
-                        <div id="ss" class="tabcontent slideUp">
-                            <div class="OnAnimateStart d-flex">
-                                <div class="d-flex flex-column firstRow">
-                                    <h1 style="color: #ffffff; padding-top: 10px">Social Sciences  </h1>
-                                    <p style="color: #ffffff; padding-top: 10px ">Programs: Sociology, Political Science, International Relations, Economics
-                                        <br>
-                                        <br>
-                                        Why: Online social science degrees help students understand societal issues, public policy, and global affairs. These are valuable for careers in government, NGOs, and research.
-                                    </p>
-                                    
-                               
-                                        <!--content-->
-                                    </div>
-                                </div>
-                    </div>
-                    <div id="law" class="tabcontent slideUp">
-                        <div class="OnAnimateStart d-flex">
+            <div class="container py-5">
+            
+                <div class="row" style="background-color: #7b289f; border-radius: 10px; padding: 25px; height: min-content; ">
+                     <div class="container">
+                        <div class="row">
+                            
                             <div class="d-flex flex-column firstRow">
-                                <h1 style="color: #ffffff; padding-top: 10px">Social Sciences</h1>
-                                <p style="color: #ffffff; padding-top: 10px ">Programs: Criminal Justice, Legal Studies, Paralegal Studies, Cybersecurity Law
+                                <h1 style="color: #ffffff; padding-top: 10px; ">Engineering</h1>
+                                <p style="color: #ffffff; padding-top: 10px  "><span class="popular">Popular Destinations: </span> Germany, USA, Canada, Australia, Singapore
                                     <br>
                                     <br>
-                                    Why: These programs cater to those interested in law enforcement, legal services, or cybersecurity. They provide knowledge in legal principles and the justice system.
+                                    <span class="special"> Specializations: </span> Mechanical, Civil, Electrical, Computer Science, Chemical Engineering.
+                                    <br>
+                                    <br>
+                                    <span class="why">  Why:</span> Engineering programs abroad offer access to cutting-edge technology, research facilities, and industry partnerships.
+                                </p>
+                                
+                            </div>
+
+                            <div class="d-flex flex-column firstRow">
+                                <h1 style="color: #ffffff; padding-top: 10px"> Medicine and Healthcare </h1>
+                                <p style="color: #ffffff; padding-top: 10px "><span class="popular">Popular Destinations: </span> USA, UK, Australia, Canada, Ireland
+                                    <br>
+                                    <br>
+                                    <span class="special"> Specializations: </span>  MBBS, Nursing, Pharmacy, Public Health, Biomedical Sciences
+                                    <br>
+                                    <br>
+                                    <span class="why">  Why:</span>Studying medicine abroad can provide access to advanced medical education, diverse patient populations, and global healthcare systems.
                                 </p>
                                 
                            
                                     <!--content-->
                                 </div>
-                            </div>
-                </div>
-                <div id="law" class="tabcontent slideUp">
-                    <div class="OnAnimateStart d-flex">
-                        <div class="d-flex flex-column firstRow">
-                            <h1 style="color: #ffffff; padding-top: 10px">Social Sciences</h1>
-                            <p style="color: #ffffff; padding-top: 10px ">Programs: Criminal Justice, Legal Studies, Paralegal Studies, Cybersecurity Law
-                                <br>
-                                <br>
-                                Why: These programs cater to those interested in law enforcement, legal services, or cybersecurity. They provide knowledge in legal principles and the justice system.
-                            </p>
-                            
-                       
-                                <!--content-->
-                            </div>
-                        </div>
-            </div>
-            <div id="education-science" class="tabcontent slideUp">
-                <div class="OnAnimateStart d-flex">
-                    <div class="d-flex flex-column firstRow">
-                        <h1 style="color: #ffffff; padding-top: 10px">Environmental Science and Sustainability
-                        </h1>
-                        <p style="color: #ffffff; padding-top: 10px ">Programs: Environmental Science, Sustainability, Renewable Energy, Environmental Policy
-                            <br>
-                            <br>
-                            Why: As global interest in sustainability grows, online programs in environmental science prepare students for careers in conservation, environmental policy, and sustainable business practices.
-                        </p>
-                        
-                   
-                            <!--content-->
-                        </div>
-                    </div>
-        </div>
-        <div id="benefits" class="tabcontent slideUp">
-            <div class="OnAnimateStart d-flex">
-                <div class="d-flex flex-column firstRow">
-                    <h1 style="color: #ffffff; padding-top: 10px">Benefits of Online Degrees
-                    </h1>
-                    <p style="color: #ffffff; padding-top: 10px ">
-   <ul>
-    <li>Flexibility: Study at your own pace, from anywhere, while balancing work and other commitments.</li>
-    <li>Accessibility: Access to programs from top universities worldwide without relocating.</li>
-    <li>Cost-Effective: Often more affordable than traditional on-campus programs, with savings on commuting and housing.</li>
-    <li>Diverse Learning Formats: Combination of video lectures, readings, interactive assignments, and virtual labs.</li>
-    <li>Career Advancement: Many online programs are designed for working professionals seeking to upskill or change careers.</li>
-   </ul>
-                  
-</p>
-                    
-               
-                        <!--content-->
-                    </div>
-                </div>
-    </div>
-    <div id="Considerations" class="tabcontent slideUp">
-        <div class="OnAnimateStart d-flex">
-            <div class="d-flex flex-column firstRow">
-                <h1 style="color: #ffffff; padding-top: 10px">Considerations When Choosing an Online Degree
-                </h1>
-                <p style="color: #ffffff; padding-top: 10px ">
-<ul>
-<li>Accreditation: Ensure the program is accredited by a recognized accrediting body.</li>
-<li>Reputation of the Institution: Research the university’s reputation and the value of its online programs.</li>
-<li>Support Services: Look for programs that offer academic support, career services, and networking opportunities.</li>
-<li>Technology Requirements: Make sure you have the necessary technology and internet access for online learning.</li>
-<li>Cost and Financial Aid: Compare tuition fees and check for available scholarships or financial aid options.</li>
-</ul>
-              
-</p>
-                
-           
-                    <!--content-->
-                </div>
-            </div>
-</div>
-                        
+                                        <div class="d-flex flex-column firstRow">
+                                            <h1 style="color: #ffffff;  padding-top: 10px; ">Business and Management</h1>
+                                            <p style="color: #ffffff; padding-top: 10px  "><span class="popular">Popular Destinations: </span> USA, UK, Canada, Australia, Singapore
+                                                <br>
+                                                <br>
+                                                <span class="special"> Specializations: </span>  MBA, International Business, Entrepreneurship, Finance, Marketing
+                                            <br>
+                                            <br>
+                                            <span class="why">  Why:</span> These programs offer global business perspectives, networking opportunities, and career prospects in multinational corporations.</p>
+                                            
+                                        </div>
                                    
-                                       
-                             
+                                          
+                                            <div class="d-flex flex-column firstRow">
+                                                <h1 style="color: #ffffff; padding-top: 10px"> Computer Science and IT </h1>
+                                                <p style="color: #ffffff; padding-top: 10px "><span class="popular">Popular Destinations: </span> USA, Canada, Germany, Australia, Netherlands
+                                                    <br>
+                                                    <span class="special"> Specializations: </span>  Data Science, Artificial Intelligence, Cybersecurity, Software Engineering, Information Systems.
+                                                    <br>
+                                                    <br>
+                                                    <span class="why">  Why:</span> The global demand for tech professionals makes this a lucrative field with vast opportunities for innovation and entrepreneurship.
+                                                </p>
+                                                
+                                           
+                                            </div>       <!--content-->
                                     
+                                            
+                                        
+                                        
+                                           
+                                                 
+                                   
+                                            <div class="d-flex flex-column firstRow">
+                                                <h1 style="color: #ffffff; padding-top: 10px"> Law </h1>
+                                                <p style="color: #ffffff; padding-top: 10px "><span class="popular">Popular Destinations: </span> UK, USA, Canada, Australia, Singapore
+                                                    <br>
+                                                    <br>
+                                                    <span class="special"> Specializations: </span> International Law, Corporate Law, Human Rights, Environmental Law, Intellectual Property Law
+                                                    <br>
+                                                    <br>
+                                                    <span class="why">  Why:</span> Law programs abroad often offer exposure to international legal systems and provide an edge in global legal practices.
+                                                </p>
+                                                
+                                           
+                                                    <!--content-->
+                                            </div>
+                                           
                                 
-                         
-                        </div>
-                    </div>
-                </div>
+                                        <div class="d-flex flex-column firstRow">
+                                            <h1 style="color: #ffffff; padding-top: 10px">Arts and Design  </h1>
+                                            <p style="color: #ffffff; padding-top: 10px "><span class="popular">Popular Destinations: </span> Italy, France, USA, UK, Netherlands
+
+                                                <br>
+                                                <br>
+                                                <span class="special"> Specializations: </span>  Fashion Design, Graphic Design, Fine Arts, Interior Design, Animation
+                                                <br>
+                                                <br>
+                                                <span class="why">  Why:</span> These countries are known for their rich cultural heritage, providing inspiration and hands-on learning opportunities in creative fields.
+                                            </p>
+                                            
+                                       
+                                                <!--content-->
+                                        </div>
+                                        
+                            
+                                    <div class="d-flex flex-column firstRow">
+                                        <h1 style="color: #ffffff; padding-top: 10px">Hospitality and Tourism </h1>
+                                        <p style="color: #ffffff; padding-top: 10px "><span class="popular">Popular Destinations: </span> Switzerland, Australia, France, Spain, Singapore
+                                            <br>
+                                            <br>
+                                            <span class="special"> Specializations: </span> Hotel Management, Event Management, Culinary Arts, Tourism Management
+                                            <br>
+                                            <br>
+                                            <span class="why">  Why:</span> Leading tourism destinations offer world-class hospitality programs with practical training and global career opportunities.
+                                        </p>
+                                        
+                                   
+                                            <!--content-->
+                                    </div>
+                                <div class="d-flex flex-column firstRow">
+                                    <h1 style="color: #ffffff; padding-top: 10px">Environmental Science and Sustainability</h1>
+                                    <p style="color: #ffffff; padding-top: 10px "><span class="popular">Popular Destinations: </span> Sweden, Netherlands, Germany, Canada, New Zealand
+                                        <br>
+                                        <br>
+                                        <span class="special"> Specializations: </span>  Climate Change, Renewable Energy, Environmental Policy, Conservation
+                                        <br>
+                                        <br>
+                                        <span class="why">  Why:</span> Countries with advanced sustainability initiatives provide an ideal environment for studying and implementing green solutions.
+
+                                    </p>
+                                    
+                               
+                                        <!--content-->
+                                    </div>
+                                
+                            <div class="d-flex flex-column firstRow">
+                                <h1 style="color: #ffffff; padding-top: 10px"> Media and Communication</h1>
+                                <p style="color: #ffffff; padding-top: 10px "><span class="popular">Popular Destinations: </span> USA, UK, Australia, Canada, Netherlands
+                                    <br>
+                                    <br>
+                                    <span class="special"> Specializations: </span>  Journalism, Digital Media, Public Relations, Film Studies, Media Production
+                                    <br>
+                                    <br>
+                                    <span class="why">  Why:</span>Global media hubs offer the best opportunities for internships, networking, and exposure to the evolving media landscape.
+                                </p>
+                                
+                           
+                                    <!--content-->
+                            </div>
+                            <div class="d-flex flex-column firstRow">
+                                <h1 style="color: #ffffff; padding-top: 10px">  Tips for Choosing a Course Abroad:
+                                </h1>
+                                <p style="color: #ffffff; padding-top: 10px "><span class="line"> University Rankings:</span> Look at global rankings for specific programs.
+                                    <br>
+                                    <br>
+                                  <span class="line">  Consider Future Career Prospects:</span> Research the job market in the country you wish to study.
+                                    <br>
+                                    <br>
+                                   <span class="line"> Language Proficiency: </span> you are comfortable with the language of instruction.
+                                    <br>
+                                    <br>
+                                   <span class="line"> Cultural and Social Environment:</span> Consider how well you will adapt to a new culture.
+                                    <br>
+                                    <br>
+    <span class="line">Financial Planning: </span> tuition costs, scholarships, and living expenses.
+    <br>
+    <br>
+    
+    
+                                </p>   <!--content-->
+                            </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+                
             </div>
-        </div>
-        </div>
         <!-- Feature Start -->
 
 

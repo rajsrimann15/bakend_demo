@@ -72,45 +72,7 @@
 
     <div class="black-shade" id="black-shade" style="display: none;"></div>
 
-    <!-- Topbar Start -->
-    <div class="container-fluid bg-dark top-bar">
-        <div class="row py-2 px-lg-5">
-            <div class="col-lg-12 d-flex justify-content-between align-items-center">
-                <div class="d-flex align-items-center text-white m-2">
-                    <img src="img/WhatsApp.svg" style="height: 40px; margin-right:2px;">
-                    <p style="margin: 0;">+91 63827 09460 <br> +91 91108 01809</p>
-                    <!-- <small style="padding-left: 10px; margin-bottom: 10px;">|</small>-->
-                </div>
-                <div class="d-flex align-items-center text-white">
-                    <p style="margin: 0; font-size:30px"><i class="fa fa-envelope mr-2"></i>director@study-spark.com
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- Topbar End -->
-
-
-    <!-- Navbar Start -->
-    <div class="container-fluid p-0 d-lg-block text-center" id="header">
-        <div class="logo-title d-lg-block">
-            <a href="index.html" class="navbar-brand">
-                <div class="header-container flex-nowrap">
-                    <img src="img/logo2.svg" alt="Logo" class="logo">
-                    <div class="text-container">
-                        <h1 class="m-0 text-uppercase text-primary" style="line-height: 1.0;">
-                            <span class="study-spark">STUDY SPARK</span><br>
-                            <span class="educational-consultancy">EDUCATIONAL CONSULTANCY</span><br>
-                            <span class="header-title"
-            style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;font-weight: bold;text-transform: uppercase;font-size: 20px;color: black;">
-            " Your Spark For Academic Achievement "</span>
-                        </h1>
-                    </div>
-                </div>
-            </a>
-        </div>
+    <%- include('partials/header')%>
         
         <nav class="navbar justify-content-center navbar-expand-lg bg-white navbar-light py-3 px-lg-5">
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -125,19 +87,19 @@
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Online Course</a>
                         <div class="dropdown-menu m-0">
                             <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">UG Courses</a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">UG</a>
                                 <div class="dropdown-menu m-0">
-                                    <a href="ug-course1.html" class="dropdown-item nav-link">BA</a>
-                                    <a href="ug-course2.html" class="dropdown-item nav-link">BBA</a>
-                                    <a href="ug-course2.html" class="dropdown-item nav-link"> BCA</a>
+                                    <a href="ba.html" class="dropdown-item nav-link">BA</a>
+                                    <a href="bba.html" class="dropdown-item nav-link">BBA</a>
+                                    <a href="bca.html" class="dropdown-item nav-link"> BCA</a>
                                 </div>
                             </div>
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">PG Courses</a>
                                 <div class="dropdown-menu m-0">
-                                    <a href="pg-course1.html" class="dropdown-item nav-link">MBA</a>
-                                    <a href="pg-course2.html" class="dropdown-item nav-link">MCA</a>
-                                    <a href="pg-course2.html" class="dropdown-item nav-link">MA<br>(English/ Political
+                                    <a href="mba.html" class="dropdown-item nav-link">MBA</a>
+                                    <a href="mca.html" class="dropdown-item nav-link">MCA</a>
+                                    <a href="ma.html" class="dropdown-item nav-link">MA<br>(English/ Political
                                         Science/ Sociology)</a>
                                 </div>
                             </div>
@@ -147,39 +109,41 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Study Abroad</a>
                         <div class="dropdown-menu m-0">
-                            <a href="index.html" class="nav-item nav-link">Management </a>
-                            <a href="index.html" class="nav-item nav-link">Medical</a>
-                            <a href="index.html" class="nav-item nav-link">Engineering</a>
-                            <a href="index.html" class="nav-item nav-link">Architecture</a>
-                            <a href="index.html" class="nav-item nav-link">Science</a>
-                            <a href="index.html" class="nav-item nav-link">Law</a>
-                            <a href="index.html" class="nav-item nav-link">Commerce</a>
-                            <a href="index.html" class="nav-item nav-link">Arts</a>
+                            <a href="management.html" class="nav-item nav-link">Management </a>
+                            <a href="medical.html" class="nav-item nav-link">Medical</a>
+                            <a href="engineering.html" class="nav-item nav-link">Engineering</a>
+                            <a href="architecture.html" class="nav-item nav-link active">Architecture</a>
+                            <a href="science.html" class="nav-item nav-link">Science</a>
+                            <a href="law.html" class="nav-item nav-link">Law</a>
+                            <a href="commerce.html" class="nav-item nav-link">Commerce</a>
+                            <a href="arts.html" class="nav-item nav-link">Arts</a>
                         </div>
                     </div>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle active" data-toggle="dropdown">Countries</a>
-                        <div class="dropdown-menu m-0">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Countries</a>
+                        <div class="dropdown-menu m-0" >
                             <a href="usa.html" class="nav-item nav-link">USA</a>
-                            <a href="canada.html" class="nav-item nav-link active">Canada</a>
+                            <a href="canada.html" class="nav-item nav-link">Canada</a>
                             <a href="uk.html" class="nav-item nav-link">UK</a>
-                            <a href="europe.html" class="nav-item nav-link">Europe</a>
-                            <a href="index.html" class="nav-item nav-link">Australia</a>
+                            <a href="ireland.html" class="nav-item nav-link">Ireland</a>
+                            <a href="singapore.html" class="nav-item nav-link">Singapore</a>
+                            <a href="australia.html" class="nav-item nav-link">Australia</a>
                             <a href="newzealand.html" class="nav-item nav-link">New Zealand</a>
                             <a href="dubai.html" class="nav-item nav-link">Dubai</a>
                             <a href="france.html" class="nav-item nav-link">France</a>
                             <a href="italy.html" class="nav-item nav-link">Italy</a>
                             <a href="germany.html" class="nav-item nav-link">Germany</a>
+                             
                         </div>
                     </div>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">MBBS Abroad</a>
                         <div class="dropdown-menu m-0">
-                            <a href="index.html" class="nav-item nav-link">Russia</a>
-                            <a href="index.html" class="nav-item nav-link">Georgia</a>
-                            <a href="index.html" class="nav-item nav-link">Philippines</a>
-                            <a href="index.html" class="nav-item nav-link">China</a>
-                            <a href="index.html" class="nav-item nav-link">Serbia</a>
+                            <a href="russia.html" class="nav-item nav-link">Russia</a>
+                            <a href="georgia.html" class="nav-item nav-link">Georgia</a>
+                            <a href="philippines.html" class="nav-item nav-link">Philippines</a>
+                            <a href="china.html" class="nav-item nav-link">China</a>
+                            <a href="serbia.html" class="nav-item nav-link">Serbia</a>
                         </div>
                     </div>
                     <a href="contact.html" class="nav-item nav-link">Contact</a>

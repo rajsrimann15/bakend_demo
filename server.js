@@ -5,10 +5,12 @@ require('dotenv').config();
 const PORT = process.env.PORT || 3000;
 
 const path = require('path');
+const { measureMemory } = require('vm');
 
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, 'views'));
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -101,6 +103,43 @@ app.post('/send-email', (req, res) => {
         }
     });
 });
+
+app.post('/contact-mail', (req, res) => {
+    const {name, email, subject, message} = req.body;
+
+    let transporter = nodemailer.createTransport({
+        service: "gmail",
+        secure: true, // Use SSL
+        port: 465,
+        logger:true,
+        debug:true,
+        secureConnection:true,
+        auth: {
+            user: process.env.EMAIL_USER,
+            pass: "rpresvgjbbkfujux"
+        },
+        tls:{
+            rejectUnAuthorized:true
+        }
+    });
+
+    let mailOptions = {
+        from: `${name} <${email}>`,
+        to: 'director@study-spark.com',
+        subject: `${subject}`,
+        message: `${message}`
+    };
+
+    transporter.sendMail(mailOptions, (error, info) => {
+        if(error) {
+            console.log(error);
+            res.json({success: false, message: 'Sorry, something went wrong. Please try again later.'});
+        } else {
+            console.log('Email send: ' + info.response);
+            res.redirect('contact.html?success=true#contact')
+        }
+    })
+})
 
 app.listen(PORT, () => { 
     console.log(`Server is running on PORT: http://localhost:${PORT}`); 

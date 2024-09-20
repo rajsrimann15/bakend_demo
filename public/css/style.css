@@ -71,7 +71,7 @@ body {
   font-weight: 400;
   line-height: 1.5;
   color: #000000;
-  overflow: scroll;
+  overflow-y: scroll;
   /* Hide body scroll, we'll handle it with the content */
   position: relative;
   text-align: justify;
@@ -84,7 +84,7 @@ body::before {
   /* Cover the entire viewport */
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   height: 100%;
   /* background-image: linear-gradient(rgba(37, 44, 54, 0.603), rgba(40, 120, 235, 0.05)), url('../img/bg-image2.jpg'); */
   background: #e3c6fe;
@@ -3698,6 +3698,8 @@ input[type="button"].btn-block {
 .dropdown-menu {
   max-height: 400px;
   overflow-y: auto;
+  /* max-width: 400px;
+  overflow-x: auto; */
 }
 
 .dropdown-header {
@@ -5815,6 +5817,7 @@ a.badge-dark.focus {
 }
 
 .list-group-item {
+  width: 100% !important;
   position: relative;
   display: block;
   padding: 0.75rem 1.25rem;
@@ -11114,6 +11117,7 @@ h6,
     align-items: center; /* Centers content vertically */
     justify-content: center; /* Centers content horizontally */
 }
+
 .jumbotron.ireland {
   background-image: url('../img/ireland.jpg');
     background-size: cover; /* Ensures the image covers the entire background */
@@ -11229,6 +11233,127 @@ h6,
 
 .jumbotron.uk{
   background-image: url('../img/uk1.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    height: 80vh; /* Sets the height of the element to fill the viewport height */
+    color: white; /* Sets text color for contrast, optional */
+    display: flex; /* Centers content horizontally and vertically */
+    align-items: center; /* Centers content vertically */
+    justify-content: center; /* Centers content horizontally */
+}
+.jumbotron.ba{
+  background-image: url('../img/ba.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    height: 80vh; /* Sets the height of the element to fill the viewport height */
+    color: white; /* Sets text color for contrast, optional */
+    display: flex; /* Centers content horizontally and vertically */
+    align-items: center; /* Centers content vertically */
+    justify-content: center; /* Centers content horizontally */
+}
+.jumbotron.bba{
+  background-image: url('../img/bba.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    height: 80vh; /* Sets the height of the element to fill the viewport height */
+    color: white; /* Sets text color for contrast, optional */
+    display: flex; /* Centers content horizontally and vertically */
+    align-items: center; /* Centers content vertically */
+    justify-content: center; /* Centers content horizontally */
+}
+.jumbotron.bca{
+  background-image: url('../img/mba.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    height: 80vh; /* Sets the height of the element to fill the viewport height */
+    color: white; /* Sets text color for contrast, optional */
+    display: flex; /* Centers content horizontally and vertically */
+    align-items: center; /* Centers content vertically */
+    justify-content: center; /* Centers content horizontally */
+}
+.jumbotron.management{
+  background-image: url('../img/management.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    height: 80vh; /* Sets the height of the element to fill the viewport height */
+    color: white; /* Sets text color for contrast, optional */
+    display: flex; /* Centers content horizontally and vertically */
+    align-items: center; /* Centers content vertically */
+    justify-content: center; /* Centers content horizontally */
+}
+.jumbotron.medical{
+  background-image: url('../img/medicine.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    height: 80vh; /* Sets the height of the element to fill the viewport height */
+    color: white; /* Sets text color for contrast, optional */
+    display: flex; /* Centers content horizontally and vertically */
+    align-items: center; /* Centers content vertically */
+    justify-content: center; /* Centers content horizontally */
+}
+.jumbotron.engineering{
+  background-image: url('../img/engineering.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    height: 80vh; /* Sets the height of the element to fill the viewport height */
+    color: white; /* Sets text color for contrast, optional */
+    display: flex; /* Centers content horizontally and vertically */
+    align-items: center; /* Centers content vertically */
+    justify-content: center; /* Centers content horizontally */
+}
+.jumbotron.architecture{
+  background-image: url('../img/architecture.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    height: 80vh; /* Sets the height of the element to fill the viewport height */
+    color: white; /* Sets text color for contrast, optional */
+    display: flex; /* Centers content horizontally and vertically */
+    align-items: center; /* Centers content vertically */
+    justify-content: center; /* Centers content horizontally */
+}
+.jumbotron.science{
+  background-image: url('../img/science.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    height: 80vh; /* Sets the height of the element to fill the viewport height */
+    color: white; /* Sets text color for contrast, optional */
+    display: flex; /* Centers content horizontally and vertically */
+    align-items: center; /* Centers content vertically */
+    justify-content: center; /* Centers content horizontally */
+}
+.jumbotron.law{
+  background-image: url('../img/law.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    height: 80vh; /* Sets the height of the element to fill the viewport height */
+    color: white; /* Sets text color for contrast, optional */
+    display: flex; /* Centers content horizontally and vertically */
+    align-items: center; /* Centers content vertically */
+    justify-content: center; /* Centers content horizontally */
+}
+.jumbotron.commerce{
+  background-image: url('../img/commerce.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    height: 80vh; /* Sets the height of the element to fill the viewport height */
+    color: white; /* Sets text color for contrast, optional */
+    display: flex; /* Centers content horizontally and vertically */
+    align-items: center; /* Centers content vertically */
+    justify-content: center; /* Centers content horizontally */
+}
+.jumbotron.arts{
+  background-image: url('../img/arts.jpg');
     background-size: cover; /* Ensures the image covers the entire background */
     background-position: center; /* Centers the image */
     background-repeat: no-repeat; /* Prevents the image from repeating */
@@ -11821,7 +11946,7 @@ background-animation {
 }
 
 .bottom-bar {
-  width: 100vw;
+  width: 100%;
   background-image: url('../img/footer_bg.png');
   background-size: cover;
   /* Ensures the image covers the entire area */
@@ -12012,8 +12137,8 @@ background-animation {
 }
 
 .mainHolder{
-  height:auto;
-   overflow: hidden;    
+  height: auto;
+  overflow: hidden;    
 }
 
 .mainHolder .tabcontent{ 
@@ -12026,15 +12151,15 @@ animation: fromBot 2s;
 }
 
 .showHere {
-
- overflow:hidden!important
+ width: 100% !important;
+ overflow:hidden !important
 }
 
 .box1{
   margin-bottom:0.5rem;
   background-color:#1df550;
   color: white;
-  height: 120px;
+  height: 140px;
   width: 180px;
   cursor: pointer;
   text-align: center;
@@ -12054,7 +12179,7 @@ animation: fromBot 2s;
   margin-bottom:0.5rem;
   background-color:#3dc7d9;
   color: white;
-  height: 120px;
+  height: 140px;
   width: 180px;
   cursor: pointer;
   text-align: center;
@@ -12075,7 +12200,7 @@ animation: fromBot 2s;
   margin-bottom:0.5rem;
   background-color:#d1736d;
   color: white;
-  height: 120px;
+  height: 140px;
   width: 180px;
   cursor: pointer;
   text-align: center;
@@ -12094,7 +12219,7 @@ animation: fromBot 2s;
   margin-bottom:0.5rem;
   background-color:#f582bf;
   color: white;
-  height: 120px;
+  height: 140px;
   width: 180px;
   cursor: pointer;
   text-align: center;
@@ -12177,7 +12302,7 @@ animation: fromBot 2s;
 }
 
 .top-footer {
-  width: 100vw;
+  width: 100%;
   height: fit-content;
   background-color: white;
   text-align: center;
@@ -12269,4 +12394,26 @@ animation: fromBot 2s;
 .special{
   font-size: 20px;
   font-weight: bold;
+}
+
+/* Custom Styles */
+
+.dropdown {
+  position: relative;
+}
+
+.nested-dropdown {
+  position: absolute;
+  left: 0;
+  display: none;
+}
+
+.nested-dropdown-toogle:hover .nested-dropdown {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .mainHolder {
+    display: none;
+  }
 }

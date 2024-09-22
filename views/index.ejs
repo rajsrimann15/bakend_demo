@@ -84,49 +84,28 @@
                 <div class="navbar-nav py-0">
                     <a href="index.html" class="nav-item nav-link active">Home</a>
                     <a href="about.html" class="nav-item nav-link">About us</a>
-                    <!-- <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Online Course</a>
-                        <div class="dropdown-menu m-0">
-                            <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" style="overflow-y: visible !important;" data-toggle="dropdown">UG</a>
-                                <div class="dropdown-menu m-0">
-                                    <a href="ba.html" class="dropdown-item nav-link">BA</a>
-                                    <a href="bba.html" class="dropdown-item nav-link">BBA</a>
-                                    <a href="bca.html" class="dropdown-item nav-link"> BCA</a>
-                                </div>
-                            </div>
-                            <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">PG Courses</a>
-                                <div class="dropdown-menu m-0">
-                                    <a href="mba.html" class="dropdown-item nav-link">MBA</a>
-                                    <a href="mca.html" class="dropdown-item nav-link">MCA</a>
-                                    <a href="ma.html" class="dropdown-item nav-link">MA<br>(English/ Political Science/ Sociology)</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Online Course</a>
                         <div class="dropdown-menu m-0">
                             <div class="nav-item dropdown">
-                                <a href="#" class="nav-link nested-dropdown-toggle" data-toggle="dropdown">UG</a>
-                                <div class="m-0 nested-dropdown"> <!-- Added class here -->
-                                    <a href="ba.html" class="dropdown-item nav-link">BA</a>
-                                    <a href="bba.html" class="dropdown-item nav-link">BBA</a>
-                                    <a href="bca.html" class="dropdown-item nav-link"> BCA</a>
+                                <a href="#" class="nav-link ug-dropdown-toggle">UG</a>
+                                <div class="m-0 ug-dropdown"> <!-- New class added here -->
+                                    <a href="ba.html" class="dropdown-item">BA</a>
+                                    <a href="bba.html" class="dropdown-item">BBA</a>
+                                    <a href="bca.html" class="dropdown-item">BCA</a>
                                 </div>
                             </div>
                             <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">PG Courses</a>
-                                <div class="dropdown-menu m-0 nested-dropdown"> <!-- Added class here -->
-                                    <a href="mba.html" class="dropdown-item nav-link">MBA</a>
-                                    <a href="mca.html" class="dropdown-item nav-link">MCA</a>
-                                    <a href="ma.html" class="dropdown-item nav-link">MA<br>(English/ Political Science/
-                                        Sociology)</a>
+                                <a href="#" class="nav-link pg-dropdown-toggle">PG Courses</a>
+                                <div class="m-0 pg-dropdown"> <!-- New class added here -->
+                                    <a href="mba.html" class="dropdown-item">MBA</a>
+                                    <a href="mca.html" class="dropdown-item">MCA</a>
+                                    <a href="ma.html" class="dropdown-item">MA<br>(English/ Political Science/ Sociology)</a>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    
 
 
                     <div class="nav-item dropdown">
@@ -174,7 +153,6 @@
                 <!--<a href="" class="btn btn-primary py-2 px-4 d-none d-lg-block">Join Us</a>-->
             </div>
         </nav>
-        </div>
         <!-- Navbar End -->
 
 
@@ -196,9 +174,12 @@
                         <button class="btn btn-outline-light bg-white text-body px-4 dropdown-toggle" type="button"
                             data-toggle="dropdown" aria-haspopup="true"   aria-expanded="false">Courses</button>
                         <div class="dropdown-menu">
-                            <a href="" class="dropdown-item">Course 1</a>
-                            <a href="" class="dropdown-item">Course 1</a>
-                            <a href="" class="dropdown-item">Course 1</a>
+                            <a href="/bba.html" class="dropdown-item">BBA</a>
+                            <a href="/ba.html" class="dropdown-item">BA</a>
+                            <a href="/bca.html" class="dropdown-item">BCA</a>
+                            <a href="/mba.html" class="dropdown-item">MBA</a>
+                            <a href="/ma.html" class="dropdown-item">MA</a>
+                            <a href="/mca.html" class="dropdown-item">MCA</a>
                         </div>
                     </div>
                     <input type="text" class="form-control border-light" id="course-input" style="padding: 0 25px;"
@@ -788,39 +769,47 @@
                 });
 
                 $(document).ready(function () {
-                    var courses = ["Aeronautical", "Electrical", "Computer Science", "Computer Engineering"]; // Replace with your actual courses
+                    var courses = [
+                        { name: "BBA", url: "/bba.html" },
+                        { name: "BA", url: "/ba.html" },
+                        { name: "BCA", url: "/bca.html" },
+                        { name: "MBA", url: "/mba.html" },
+                        { name: "MA", url: "/ma.html" },
+                        { name: "MCA", url: "/mca.html" }
+                    ];
 
                     $('#course-input').on('input', function () {
                         var keyword = $(this).val();
-                        if (keyword.length > 2) {
-                            var suggestions = courses.filter(function (course) {
-                                return course.toLowerCase().includes(keyword.toLowerCase());
-                            });
 
-                            if (suggestions.length > 0) {
-                                $('#course-suggestions').empty();
-                                $.each(suggestions, function (index, suggestion) {
-                                    var suggestionItem = $('<a class="dropdown-item" href="#">' + suggestion + '</a>');
-                                    suggestionItem.click(function () {
-                                        // Handle the click event, e.g., populate the input field or perform another action
-                                        $('#course-input').val(suggestion);
-                                        $('#course-suggestions').hide();
-                                    });
-                                    $('#course-suggestions').append(suggestionItem);
-                                });
-                                $('#course-suggestions').show();
-                            } else {
-                                $('#course-suggestions').hide();
-                            }
+                        var suggestions = courses.filter(function (course) {
+                            return course.name.toLowerCase().includes(keyword.toLowerCase());
+                        });
+
+                        if (suggestions.length > 0) {
+                            $('#course-suggestions').empty();
+                            $.each(suggestions, function (index, suggestion) {
+                                var suggestionItem = $('<a class="dropdown-item" href="' + suggestion.url + '">' + suggestion.name + '</a>');
+                                $('#course-suggestions').append(suggestionItem);
+                            });
+                            $('#course-suggestions').show();
                         } else {
                             $('#course-suggestions').hide();
                         }
                     });
 
+                    // Delay the hiding of suggestions to allow link clicks
                     $('#course-input').on('blur', function () {
-                        $('#course-suggestions').hide();
+                        setTimeout(function () {
+                            $('#course-suggestions').hide();
+                        }, 200);
+                    });
+
+                    // Keep the suggestions visible while hovering over them
+                    $('#course-suggestions').on('mousedown', function (event) {
+                        event.preventDefault(); // Prevent blur event when selecting
                     });
                 });
+
             </script>
 
             <!-- <script>

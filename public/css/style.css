@@ -3698,8 +3698,8 @@ input[type="button"].btn-block {
 .dropdown-menu {
   max-height: 400px;
   overflow-y: auto;
-  /* max-width: 400px;
-  overflow-x: auto; */
+  min-width:auto;
+  overflow-x:visible;
 }
 
 .dropdown-header {
@@ -11218,6 +11218,61 @@ h6,
     align-items: center; /* Centers content vertically */
     justify-content: center; /* Centers content horizontally */
 }
+.jumbotron.russia {
+  background-image: url('../img/russia.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    height: 80vh; /* Sets the height of the element to fill the viewport height */
+    color: white; /* Sets text color for contrast, optional */
+    display: flex; /* Centers content horizontally and vertically */
+    align-items: center; /* Centers content vertically */
+    justify-content: center; /* Centers content horizontally */
+}
+.jumbotron.georgia {
+  background-image: url('../img/georgia.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    height: 80vh; /* Sets the height of the element to fill the viewport height */
+    color: white; /* Sets text color for contrast, optional */
+    display: flex; /* Centers content horizontally and vertically */
+    align-items: center; /* Centers content vertically */
+    justify-content: center; /* Centers content horizontally */
+}
+.jumbotron.philiphines {
+  background-image: url('../img/philipines.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    height: 80vh; /* Sets the height of the element to fill the viewport height */
+    color: white; /* Sets text color for contrast, optional */
+    display: flex; /* Centers content horizontally and vertically */
+    align-items: center; /* Centers content vertically */
+    justify-content: center; /* Centers content horizontally */
+}
+.jumbotron.china{
+  background-image: url('../img/china.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    height: 80vh; /* Sets the height of the element to fill the viewport height */
+    color: white; /* Sets text color for contrast, optional */
+    display: flex; /* Centers content horizontally and vertically */
+    align-items: center; /* Centers content vertically */
+    justify-content: center; /* Centers content horizontally */
+}
+.jumbotron.serbia{
+  background-image: url('../img/serbia.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    height: 80vh; /* Sets the height of the element to fill the viewport height */
+    color: white; /* Sets text color for contrast, optional */
+    display: flex; /* Centers content horizontally and vertically */
+    align-items: center; /* Centers content vertically */
+    justify-content: center; /* Centers content horizontally */
+}
 .jumbotron.usa1::before
 {
   content: "";
@@ -12416,4 +12471,36 @@ animation: fromBot 2s;
   .mainHolder {
     display: none;
   }
+}
+
+/* Keep the dropdown open when hovering or focusing */
+.ug-dropdown, .pg-dropdown {
+  display: none;
+  position: relative;
+  top: 0;
+  z-index: 1000;
+  min-width: 200px;
+  left: 0;
+}
+
+.nav-item.dropdown:hover .ug-dropdown, 
+.nav-item.dropdown:hover .pg-dropdown {
+  display: block;
+}
+
+/* Ensure parent dropdown stays open when hovering over child items */
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-item {
+  padding: 10px 15px;
+}
+
+.nav-link {
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: relative;
 }
